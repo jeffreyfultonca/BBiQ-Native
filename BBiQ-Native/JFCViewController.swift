@@ -78,9 +78,19 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     // MARK: - UITableViewDelegate
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
     
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        var header = view as UITableViewHeaderFooterView
+        header.textLabel.textColor = UIColor.whiteColor()
+        header.contentView.backgroundColor = sections[section].color
+    }
     
-    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.0
+    }
     // MARK: - UITableViewDataSource
     
     struct JFCFoodItem {
@@ -91,21 +101,52 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     struct JFCSection {
         var name: String
         var items: Array<JFCFoodItem>
+        var color: UIColor
     }
     
+
+    
     let sections = [
-        JFCSection(name: "Beef", items: [
-            JFCFoodItem(name: "Burger", minutes: 12),
-            JFCFoodItem(name: "Ribs", minutes: 30),
-            JFCFoodItem(name: "Roast", minutes: 45),
-            JFCFoodItem(name: "Steak", minutes: 12)
-        ]),
-        JFCSection(name: "Chicken", items: [
-            JFCFoodItem(name: "Burger", minutes: 12),
-            JFCFoodItem(name: "Ribs", minutes: 30),
-            JFCFoodItem(name: "Roast", minutes: 45),
-            JFCFoodItem(name: "Steak", minutes: 12)
-        ])
+        JFCSection(
+            name: "Beef",
+            items: [
+                JFCFoodItem(name: "Burger", minutes: 12),
+                JFCFoodItem(name: "Ribs", minutes: 30),
+                JFCFoodItem(name: "Roast", minutes: 45),
+                JFCFoodItem(name: "Steak", minutes: 12)
+            ],
+            color: UIColor(red: 0.777, green: 0.133, blue: 0.133, alpha: 1.0)
+        ),
+        JFCSection(
+            name: "Chicken",
+            items: [
+                JFCFoodItem(name: "Breast", minutes: 10),
+                JFCFoodItem(name: "Burger", minutes: 12),
+                JFCFoodItem(name: "Whole", minutes: 75),
+                JFCFoodItem(name: "Wings", minutes: 15)
+            ],
+            color: UIColor(red: 0.648, green: 0.504, blue: 0.18, alpha: 1.0)
+        ),
+        JFCSection(
+            name: "Pork",
+            items: [
+                JFCFoodItem(name: "Chop", minutes: 10),
+                JFCFoodItem(name: "Ribs", minutes: 32),
+                JFCFoodItem(name: "Roast", minutes: 25),
+                JFCFoodItem(name: "Tenderloin", minutes: 15)
+            ],
+            color: UIColor(red: 0.180, green: 0.627, blue: 0.651, alpha: 1.0)
+        ),
+        JFCSection(
+            name: "Vegetables",
+            items: [
+                JFCFoodItem(name: "Carrots", minutes: 15),
+                JFCFoodItem(name: "Corn", minutes: 18),
+                JFCFoodItem(name: "Onions", minutes: 12),
+                JFCFoodItem(name: "Potatoes", minutes: 30)
+            ],
+            color: UIColor(red: 0.369, green: 0.588, blue: 0.133, alpha: 1.0)
+        )
     ]
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
