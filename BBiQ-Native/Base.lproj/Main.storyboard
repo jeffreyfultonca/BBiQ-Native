@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C68k" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gCc-r8-I6C">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -24,7 +25,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="TNP-xe-Wad">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1067" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TNP-xe-Wad" secondAttribute="height" multiplier="16:9" id="MXp-oQ-edE"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-blur" translatesAutoresizingMaskIntoConstraints="NO" id="zjE-fw-jaM" userLabel="background-blur">
+                                <rect key="frame" x="0.0" y="0.0" width="1067" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zjE-fw-jaM" secondAttribute="height" multiplier="16:9" id="akg-Wu-dMu"/>
+                                </constraints>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSh-ul-RwF">
                                 <rect key="frame" x="0.0" y="265" width="600" height="70"/>
@@ -63,10 +73,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="DSh-ul-RwF" secondAttribute="centerY" id="2j2-yG-gmW"/>
-                            <constraint firstItem="TNP-xe-Wad" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="top" constant="-64" id="ASG-mv-zYG"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="zjE-fw-jaM" secondAttribute="bottom" id="51l-2c-Dd7"/>
+                            <constraint firstItem="TNP-xe-Wad" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="DHt-HO-YMi"/>
+                            <constraint firstItem="zjE-fw-jaM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="IUG-4W-RRk"/>
                             <constraint firstItem="TNP-xe-Wad" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="WbR-IL-cX8"/>
-                            <constraint firstAttribute="trailing" secondItem="TNP-xe-Wad" secondAttribute="trailing" id="ZnR-K0-v7n"/>
                             <constraint firstItem="DSh-ul-RwF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="eTG-15-NPa"/>
+                            <constraint firstItem="zjE-fw-jaM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="h4t-gE-Xkn"/>
                             <constraint firstAttribute="trailing" secondItem="DSh-ul-RwF" secondAttribute="trailing" id="hqy-6b-3RS"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="TNP-xe-Wad" secondAttribute="bottom" id="kxM-no-K3H"/>
                         </constraints>
@@ -75,10 +87,12 @@
                         <barButtonItem key="leftBarButtonItem" image="menu" id="DoI-P8-DZg">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="plus" id="kNa-wa-i9e">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="backgroundBlurView" destination="zjE-fw-jaM" id="ybh-m2-ZLg"/>
+                        <outlet property="backgroundView" destination="TNP-xe-Wad" id="JZf-hd-rSr"/>
+                        <outlet property="blurView" destination="DSh-ul-RwF" id="mN8-V4-7sI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,6 +106,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hYH-2S-y8k">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="24"/>
@@ -108,8 +123,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="1080" height="1920"/>
+        <image name="background" width="853" height="640"/>
+        <image name="background-blur" width="853" height="640"/>
         <image name="menu" width="33" height="33"/>
-        <image name="plus" width="33" height="33"/>
     </resources>
 </document>
