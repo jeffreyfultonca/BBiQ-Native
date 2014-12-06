@@ -69,7 +69,7 @@
                                 </constraints>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gZw-JK-BNM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gZw-JK-BNM">
                                 <rect key="frame" x="16" y="0.0" width="568" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -110,11 +110,23 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="e4f-Hk-mRC"/>
                                 </connections>
                             </tableView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hic-SA-83h" userLabel="NavBar Blur">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dNu-Iy-Kxm">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="G7I-gl-R8c"/>
+                                </constraints>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="DSh-ul-RwF" secondAttribute="centerY" id="2j2-yG-gmW"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="zjE-fw-jaM" secondAttribute="bottom" id="51l-2c-Dd7"/>
+                            <constraint firstItem="Hic-SA-83h" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="9Jg-GG-5Mo"/>
                             <constraint firstItem="gZw-JK-BNM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="9uZ-OB-olJ"/>
                             <constraint firstItem="TNP-xe-Wad" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="DHt-HO-YMi"/>
                             <constraint firstItem="zjE-fw-jaM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="IUG-4W-RRk"/>
@@ -126,6 +138,8 @@
                             <constraint firstItem="zjE-fw-jaM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="h4t-gE-Xkn"/>
                             <constraint firstAttribute="trailing" secondItem="DSh-ul-RwF" secondAttribute="trailing" id="hqy-6b-3RS"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="TNP-xe-Wad" secondAttribute="bottom" id="kxM-no-K3H"/>
+                            <constraint firstItem="Hic-SA-83h" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="pQk-AO-cdG"/>
+                            <constraint firstAttribute="trailing" secondItem="Hic-SA-83h" secondAttribute="trailing" id="zT0-cS-eeT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="BBiQ" id="5nS-uZ-vhm">
@@ -137,6 +151,7 @@
                         <outlet property="backgroundBlurView" destination="zjE-fw-jaM" id="ybh-m2-ZLg"/>
                         <outlet property="backgroundView" destination="TNP-xe-Wad" id="JZf-hd-rSr"/>
                         <outlet property="blurView" destination="DSh-ul-RwF" id="mN8-V4-7sI"/>
+                        <outlet property="navBarBlurEffectView" destination="Hic-SA-83h" id="l6G-Tj-kDX"/>
                         <outlet property="tableView" destination="gZw-JK-BNM" id="P5x-eE-0H4"/>
                     </connections>
                 </viewController>
@@ -153,7 +168,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="24"/>
                         </textAttributes>

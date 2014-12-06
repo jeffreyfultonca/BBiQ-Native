@@ -16,6 +16,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     var plusButtonImageView: UIImageView!;
     var animationIsToggled = false
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navBarBlurEffectView: UIVisualEffectView!
     
     let cellHeight = CGFloat(60)
     
@@ -66,6 +67,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 self.backgroundBlurView.frame.origin.x = 0
                 self.backgroundBlurView.alpha = 0.0
                 self.plusButtonImageView.transform = CGAffineTransformMakeRotation(0.0)
+                self.navBarBlurEffectView.alpha = 0
             } else {
                 self.tableView.frame.origin.x -= self.view.frame.size.width
                 self.blurView.frame.origin.x -= self.blurView.frame.size.width
@@ -73,6 +75,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 self.backgroundBlurView.frame.origin.x -= 100
                 self.backgroundBlurView.alpha = 1.0
                 self.plusButtonImageView.transform = CGAffineTransformMakeRotation(CGFloat(45.0 * M_PI / 180.0))
+                self.navBarBlurEffectView.alpha = 1
             }
             self.animationIsToggled = !self.animationIsToggled
         })
