@@ -52,33 +52,36 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.navigationItem.rightBarButtonItem = barItem
     }
     
-    func createTableView() {
-        
-    }
-    
     func toggleAnimation() {
-        createTableView()
-        
-        UIView.animateWithDuration(0.5, animations: {
-            if self.animationIsToggled {
-                self.tableView.frame.origin.x += self.view.frame.size.width
-                self.blurView.frame.origin.x = 0
-                self.backgroundView.frame.origin.x = 0
-                self.backgroundBlurView.frame.origin.x = 0
-                self.backgroundBlurView.alpha = 0.0
-                self.plusButtonImageView.transform = CGAffineTransformMakeRotation(0.0)
-                self.navBarBlurEffectView.alpha = 0
-            } else {
-                self.tableView.frame.origin.x -= self.view.frame.size.width
-                self.blurView.frame.origin.x -= self.blurView.frame.size.width
-                self.backgroundView.frame.origin.x -= 100
-                self.backgroundBlurView.frame.origin.x -= 100
-                self.backgroundBlurView.alpha = 1.0
-                self.plusButtonImageView.transform = CGAffineTransformMakeRotation(CGFloat(45.0 * M_PI / 180.0))
-                self.navBarBlurEffectView.alpha = 1
-            }
-            self.animationIsToggled = !self.animationIsToggled
-        })
+    
+        UIView.animateWithDuration(
+            0.5,
+            delay: 0,
+            usingSpringWithDamping: 1.0,
+            initialSpringVelocity: 0,
+            options: nil,
+            animations: {
+                if self.animationIsToggled {
+                    self.tableView.frame.origin.x += self.view.frame.size.width
+                    self.blurView.frame.origin.x = 0
+                    self.backgroundView.frame.origin.x = 0
+                    self.backgroundBlurView.frame.origin.x = 0
+                    self.backgroundBlurView.alpha = 0.0
+                    self.plusButtonImageView.transform = CGAffineTransformMakeRotation(0.0)
+                    self.navBarBlurEffectView.alpha = 0
+                } else {
+                    self.tableView.frame.origin.x -= self.view.frame.size.width
+                    self.blurView.frame.origin.x -= self.blurView.frame.size.width
+                    self.backgroundView.frame.origin.x -= 100
+                    self.backgroundBlurView.frame.origin.x -= 100
+                    self.backgroundBlurView.alpha = 1.0
+                    self.plusButtonImageView.transform = CGAffineTransformMakeRotation(CGFloat(45.0 * M_PI / 180.0))
+                    self.navBarBlurEffectView.alpha = 1
+                }
+                
+                self.animationIsToggled = !self.animationIsToggled
+            },
+            completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
