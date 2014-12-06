@@ -79,9 +79,11 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
                     self.navBarBlurEffectView.alpha = 1
                 }
                 
-                self.animationIsToggled = !self.animationIsToggled
             },
-            completion: nil)
+            completion: nil
+        )
+        
+        self.animationIsToggled = !self.animationIsToggled
     }
 
     override func didReceiveMemoryWarning() {
@@ -197,7 +199,27 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("selected row: \(indexPath.row) in section: \(indexPath.section)")
+
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as UITableViewCell!;
+        
+        UIView.animateWithDuration(
+            0.5,
+            delay: 0,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 30,
+            options: nil,
+            animations: {
+                cell.frame.origin.x -= 10
+                cell.frame.size.width += 20
+            }, completion: {
+                (value: Bool) in
+                self.toggleAnimation()
+                
+//                cell.frame.origin.x += 10
+//                cell.frame.size.width -= 20
+                
+            }
+        )
     }
 
     

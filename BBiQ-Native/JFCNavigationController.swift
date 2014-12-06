@@ -30,13 +30,13 @@ class JFCNavigationController: UINavigationController {
         layer.addSublayer(border)
         
         // Used to find custom font names - remove when done
-        for family in UIFont.familyNames() {
-            println("family: \(family)")
-            
-            for name in UIFont.fontNamesForFamilyName(family.description) {
-                println(name)
-            }
-        }
+//        for family in UIFont.familyNames() {
+//            println("family: \(family)")
+//            
+//            for name in UIFont.fontNamesForFamilyName(family.description) {
+//                println(name)
+//            }
+//        }
         
         var attributes = [
             NSFontAttributeName: UIFont(name: "MyriadPro-Regular", size: 24)!,
