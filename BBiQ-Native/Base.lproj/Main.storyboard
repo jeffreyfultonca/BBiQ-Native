@@ -37,19 +37,19 @@
                                 </constraints>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSh-ul-RwF">
-                                <rect key="frame" x="0.0" y="265" width="600" height="70"/>
+                                <rect key="frame" x="0.0" y="255" width="600" height="90"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vM2-UC-y9T">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready to grill?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyn-D6-Sa8">
-                                            <rect key="frame" x="8" y="14" width="584" height="24"/>
+                                            <rect key="frame" x="8" y="23" width="584" height="24"/>
                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="24"/>
                                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYS-gM-XiF">
-                                            <rect key="frame" x="8" y="38" width="584" height="18"/>
+                                            <rect key="frame" x="8" y="47" width="584" height="18"/>
                                             <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="18"/>
                                             <color key="textColor" white="1" alpha="0.70000000000000007" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -58,14 +58,14 @@
                                     <constraints>
                                         <constraint firstItem="jyn-D6-Sa8" firstAttribute="leading" secondItem="vM2-UC-y9T" secondAttribute="leadingMargin" id="DVB-fu-V0h"/>
                                         <constraint firstItem="KYS-gM-XiF" firstAttribute="width" secondItem="jyn-D6-Sa8" secondAttribute="width" id="Gyj-DQ-suP"/>
-                                        <constraint firstItem="jyn-D6-Sa8" firstAttribute="top" secondItem="vM2-UC-y9T" secondAttribute="topMargin" constant="6" id="JGt-qp-53U"/>
+                                        <constraint firstItem="jyn-D6-Sa8" firstAttribute="top" secondItem="vM2-UC-y9T" secondAttribute="topMargin" constant="15" id="JGt-qp-53U"/>
                                         <constraint firstItem="KYS-gM-XiF" firstAttribute="centerX" secondItem="jyn-D6-Sa8" secondAttribute="centerX" id="LVC-sQ-oIW"/>
                                         <constraint firstItem="KYS-gM-XiF" firstAttribute="top" secondItem="jyn-D6-Sa8" secondAttribute="bottom" id="SsV-7u-y8e"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="jyn-D6-Sa8" secondAttribute="trailing" id="ztA-Eb-47y"/>
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="aZV-Z4-kkF"/>
+                                    <constraint firstAttribute="height" constant="90" id="aZV-Z4-kkF"/>
                                 </constraints>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
@@ -80,23 +80,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQ9-wf-LYm">
-                                                    <rect key="frame" x="18" y="0.0" width="461" height="44"/>
+                                                    <rect key="frame" x="15" y="0.0" width="467" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="minutes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flM-sL-p61">
-                                                    <rect key="frame" x="489" y="0.0" width="61" height="44"/>
+                                                    <rect key="frame" x="492" y="0.0" width="61" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="flM-sL-p61" firstAttribute="trailing" secondItem="QCT-xW-dWB" secondAttribute="trailingMargin" constant="-10" id="4ZW-RY-orl"/>
+                                                <constraint firstItem="flM-sL-p61" firstAttribute="trailing" secondItem="QCT-xW-dWB" secondAttribute="trailing" constant="-15" id="4ZW-RY-orl"/>
                                                 <constraint firstAttribute="bottom" secondItem="jQ9-wf-LYm" secondAttribute="bottom" id="LaK-ua-LfF"/>
                                                 <constraint firstAttribute="bottom" secondItem="flM-sL-p61" secondAttribute="bottom" id="R6W-VV-I2u"/>
-                                                <constraint firstItem="jQ9-wf-LYm" firstAttribute="leading" secondItem="QCT-xW-dWB" secondAttribute="leadingMargin" constant="10" id="SK7-oe-cjP"/>
+                                                <constraint firstItem="jQ9-wf-LYm" firstAttribute="leading" secondItem="QCT-xW-dWB" secondAttribute="leading" constant="15" id="SK7-oe-cjP"/>
                                                 <constraint firstItem="flM-sL-p61" firstAttribute="leading" secondItem="jQ9-wf-LYm" secondAttribute="trailing" constant="10" id="dM7-HC-igb"/>
                                                 <constraint firstItem="jQ9-wf-LYm" firstAttribute="top" secondItem="QCT-xW-dWB" secondAttribute="top" id="eYp-d2-Off"/>
                                                 <constraint firstItem="flM-sL-p61" firstAttribute="top" secondItem="QCT-xW-dWB" secondAttribute="top" id="zf3-Um-Mcw"/>
