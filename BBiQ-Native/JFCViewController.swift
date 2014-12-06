@@ -170,12 +170,22 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
         
         // Configure the cell...
-        cell.textLabel!.text = sections[indexPath.section].items[indexPath.row].name
+        var nameLabel = cell.viewWithTag(100) as UILabel
+        nameLabel.text = sections[indexPath.section].items[indexPath.row].name
+        
+        var minutesLabel = cell.viewWithTag(101) as UILabel
+        minutesLabel.text = "\(sections[indexPath.section].items[indexPath.row].minutes) m"
+        
         
         return cell
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 44.0
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("selected row: \(indexPath.row) in section: \(indexPath.section)")
     }
 
     
