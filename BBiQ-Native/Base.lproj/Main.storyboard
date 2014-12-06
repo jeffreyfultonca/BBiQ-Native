@@ -70,7 +70,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gZw-JK-BNM">
-                                <rect key="frame" x="16" y="84" width="568" height="516"/>
+                                <rect key="frame" x="16" y="0.0" width="568" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -115,7 +115,7 @@
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="DSh-ul-RwF" secondAttribute="centerY" id="2j2-yG-gmW"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="zjE-fw-jaM" secondAttribute="bottom" id="51l-2c-Dd7"/>
-                            <constraint firstItem="gZw-JK-BNM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="9uZ-OB-olJ"/>
+                            <constraint firstItem="gZw-JK-BNM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="9uZ-OB-olJ"/>
                             <constraint firstItem="TNP-xe-Wad" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="DHt-HO-YMi"/>
                             <constraint firstItem="zjE-fw-jaM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="IUG-4W-RRk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gZw-JK-BNM" secondAttribute="trailing" id="QWI-IO-sqV"/>

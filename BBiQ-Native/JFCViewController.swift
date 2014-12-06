@@ -17,12 +17,18 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     var animationIsToggled = false
     @IBOutlet weak var tableView: UITableView!
     
+    let cellHeight = CGFloat(60)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         addPlusBarButtonItem()
         
+        tableView.tableHeaderView = UIView(frame: CGRectMake(0, 0, tableView.bounds.size.width, cellHeight + 80))
+        tableView.contentInset = UIEdgeInsetsMake(-cellHeight, 0, 0, 0)
+        
+        tableView.tableFooterView = UIView(frame: CGRectMake(0, 0, tableView.bounds.size.width, cellHeight))
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -79,7 +85,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     // MARK: - UITableViewDelegate
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60
+        return cellHeight
     }
     
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -181,7 +187,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60.0
+        return cellHeight
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
