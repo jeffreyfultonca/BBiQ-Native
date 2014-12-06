@@ -80,47 +80,61 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     // MARK: - UITableViewDelegate
     
     
-    let sections = [
-        "Beef": [
-            [ "name": "Burger", "minutes": 12],
-            [ "name": "Ribs", "minutes": 30],
-            [ "name": "Roast", "minutes": 45],
-            [ "name": "Steak", "minutes": 12]
-        ],
-        "Chicken": [
-            [ "name": "Breast", "minutes": 10],
-            [ "name": "Burger", "minutes": 12],
-            [ "name": "Whole", "minutes": 75],
-            [ "name": "Wings", "minutes": 15]
-        ]
-    ]
     
     // MARK: - UITableViewDataSource
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    
+    struct JFCFoodItem {
+        var name: String
+        var minutes: Int
+    }
+    
+    struct JFCSection {
+        var name: String
+        var items: Array<JFCFoodItem>
+    }
+    
+    let sections = [
+        JFCSection(name: "Beef", items: [
+            JFCFoodItem(name: "Burger", minutes: 12),
+            JFCFoodItem(name: "Ribs", minutes: 30),
+            JFCFoodItem(name: "Roast", minutes: 45),
+            JFCFoodItem(name: "Steak", minutes: 12)
+        ]),
+        JFCSection(name: "Chicken", items: [
+            JFCFoodItem(name: "Burger", minutes: 12),
+            JFCFoodItem(name: "Ribs", minutes: 30),
+            JFCFoodItem(name: "Roast", minutes: 45),
+            JFCFoodItem(name: "Steak", minutes: 12)
+        ])
+    ]
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         
-        println("sections count: \(sections.count)")
-        
-        return 1
+        return sections.count
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].name
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 1
+        return sections[section].items.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
         
         // Configure the cell...
-        cell.textLabel.text = "test"
+        cell.textLabel!.text = sections[indexPath.section].items[indexPath.row].name
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }
 
     
