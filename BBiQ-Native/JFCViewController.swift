@@ -226,6 +226,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
         var cell = tableView.cellForRowAtIndexPath(indexPath) as UITableViewCell!;
+        var originalBackgroundColor = cell.backgroundColor
         
         UIView.animateWithDuration(
             0.5,
@@ -236,12 +237,24 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
             animations: {
                 cell.frame.origin.x -= 10
                 cell.frame.size.width += 20
+                cell.backgroundColor = UIColor.whiteColor()
             }, completion: {
                 (value: Bool) in
                 self.toggleAnimation()
                 
-                cell.frame.origin.x += 10
-                cell.frame.size.width -= 20
+                dispatch_after(
+                    dispatch_time(
+                        DISPATCH_TIME_NOW,
+                        Int64(0.5 * Double(NSEC_PER_SEC))
+                    ),
+                    dispatch_get_main_queue()
+                ){
+                    println("test")
+                    cell.frame.origin.x += 10
+                    cell.frame.size.width -= 20
+                    cell.backgroundColor = originalBackgroundColor
+
+                }
             }
         )
     }
