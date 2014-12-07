@@ -17,6 +17,14 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     var animationIsToggled = false
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navBarBlurEffectView: UIVisualEffectView!
+
+    @IBOutlet weak var readyToGrillBlurLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var readyToGrillBlurTrailingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var tableViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableViewTrailingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var backgroundLeadingContraint: NSLayoutConstraint!
     
     let cellHeight = CGFloat(60)
     
@@ -30,10 +38,14 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         tableView.contentInset = UIEdgeInsetsMake(-cellHeight, 0, 0, 0)
         
         tableView.tableFooterView = UIView(frame: CGRectMake(0, 0, tableView.bounds.size.width, cellHeight))
+        self.tableViewLeadingConstraint.constant = self.view.frame.size.width
+        self.tableViewTrailingConstraint.constant = -self.view.frame.size.width
+        
+        self.readyToGrillBlurLeadingConstraint.constant = 0
+        self.readyToGrillBlurTrailingConstraint.constant = 0
     }
     
     override func viewDidAppear(animated: Bool) {
-        tableView.frame.origin.x += view.frame.size.width
     }
     
     func addPlusBarButtonItem() {
@@ -62,21 +74,34 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
             options: nil,
             animations: {
                 if self.animationIsToggled {
-                    self.tableView.frame.origin.x += self.view.frame.size.width
-                    self.blurView.frame.origin.x = 0
-                    self.backgroundView.frame.origin.x = 0
-                    self.backgroundBlurView.frame.origin.x = 0
+                    
+                    self.tableViewLeadingConstraint.constant = self.view.frame.size.width
+                    self.tableViewTrailingConstraint.constant = -self.view.frame.size.width
+                    
+                    self.backgroundLeadingContraint.constant = 0
+                    
+                    self.readyToGrillBlurLeadingConstraint.constant = 0
+                    self.readyToGrillBlurTrailingConstraint.constant = 0
+                    
                     self.backgroundBlurView.alpha = 0.0
                     self.plusButtonImageView.transform = CGAffineTransformMakeRotation(0.0)
                     self.navBarBlurEffectView.alpha = 0
+                    
+                    self.view.layoutIfNeeded()
+                    
                 } else {
-                    self.tableView.frame.origin.x -= self.view.frame.size.width
-                    self.blurView.frame.origin.x -= self.blurView.frame.size.width
-                    self.backgroundView.frame.origin.x -= 100
-                    self.backgroundBlurView.frame.origin.x -= 100
+                    self.tableViewLeadingConstraint.constant = 0
+                    self.tableViewTrailingConstraint.constant = 0
+                    
+                    self.backgroundLeadingContraint.constant = -100
+                    
+                    self.readyToGrillBlurLeadingConstraint.constant = -self.view.frame.size.width
+                    self.readyToGrillBlurTrailingConstraint.constant = self.view.frame.size.width
+
                     self.backgroundBlurView.alpha = 1.0
                     self.plusButtonImageView.transform = CGAffineTransformMakeRotation(CGFloat(45.0 * M_PI / 180.0))
                     self.navBarBlurEffectView.alpha = 1
+                    self.view.layoutIfNeeded()
                 }
                 
             },
@@ -215,9 +240,8 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 (value: Bool) in
                 self.toggleAnimation()
                 
-//                cell.frame.origin.x += 10
-//                cell.frame.size.width -= 20
-                
+                cell.frame.origin.x += 10
+                cell.frame.size.width -= 20
             }
         )
     }

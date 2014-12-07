@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C68k" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gCc-r8-I6C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C78c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gCc-r8-I6C">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -35,8 +35,13 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zjE-fw-jaM" secondAttribute="height" multiplier="16:9" id="akg-Wu-dMu"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="akg-Wu-dMu"/>
+                                    </mask>
+                                </variation>
                             </imageView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSh-ul-RwF">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSh-ul-RwF" userLabel="ReadyToGrillBlur">
                                 <rect key="frame" x="0.0" y="255" width="600" height="90"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vM2-UC-y9T">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
@@ -110,7 +115,7 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="e4f-Hk-mRC"/>
                                 </connections>
                             </tableView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hic-SA-83h" userLabel="NavBar Blur">
+                            <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hic-SA-83h" userLabel="NavBar Blur">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dNu-Iy-Kxm">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
@@ -124,20 +129,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="TNP-xe-Wad" firstAttribute="width" secondItem="zjE-fw-jaM" secondAttribute="width" id="0OZ-Wt-Eu2"/>
+                            <constraint firstItem="TNP-xe-Wad" firstAttribute="centerY" secondItem="zjE-fw-jaM" secondAttribute="centerY" id="1tw-Sl-8V5"/>
                             <constraint firstAttribute="centerY" secondItem="DSh-ul-RwF" secondAttribute="centerY" id="2j2-yG-gmW"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="zjE-fw-jaM" secondAttribute="bottom" id="51l-2c-Dd7"/>
                             <constraint firstItem="Hic-SA-83h" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="9Jg-GG-5Mo"/>
                             <constraint firstItem="gZw-JK-BNM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="9uZ-OB-olJ"/>
                             <constraint firstItem="TNP-xe-Wad" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="DHt-HO-YMi"/>
-                            <constraint firstItem="zjE-fw-jaM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="IUG-4W-RRk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gZw-JK-BNM" secondAttribute="trailing" id="QWI-IO-sqV"/>
                             <constraint firstItem="gZw-JK-BNM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="W5A-Xc-tS5"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="gZw-JK-BNM" secondAttribute="bottom" id="WIM-cT-jPy"/>
                             <constraint firstItem="TNP-xe-Wad" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="WbR-IL-cX8"/>
                             <constraint firstItem="DSh-ul-RwF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="eTG-15-NPa"/>
-                            <constraint firstItem="zjE-fw-jaM" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-64" id="h4t-gE-Xkn"/>
+                            <constraint firstItem="TNP-xe-Wad" firstAttribute="height" secondItem="zjE-fw-jaM" secondAttribute="height" id="ecC-Vt-Vc5"/>
                             <constraint firstAttribute="trailing" secondItem="DSh-ul-RwF" secondAttribute="trailing" id="hqy-6b-3RS"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="TNP-xe-Wad" secondAttribute="bottom" id="kxM-no-K3H"/>
+                            <constraint firstItem="TNP-xe-Wad" firstAttribute="centerX" secondItem="zjE-fw-jaM" secondAttribute="centerX" id="lVv-HD-NxM"/>
                             <constraint firstItem="Hic-SA-83h" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="pQk-AO-cdG"/>
                             <constraint firstAttribute="trailing" secondItem="Hic-SA-83h" secondAttribute="trailing" id="zT0-cS-eeT"/>
                         </constraints>
@@ -149,10 +155,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundBlurView" destination="zjE-fw-jaM" id="ybh-m2-ZLg"/>
+                        <outlet property="backgroundLeadingContraint" destination="WbR-IL-cX8" id="Ymf-sZ-N1h"/>
                         <outlet property="backgroundView" destination="TNP-xe-Wad" id="JZf-hd-rSr"/>
                         <outlet property="blurView" destination="DSh-ul-RwF" id="mN8-V4-7sI"/>
                         <outlet property="navBarBlurEffectView" destination="Hic-SA-83h" id="l6G-Tj-kDX"/>
+                        <outlet property="readyToGrillBlurLeadingConstraint" destination="eTG-15-NPa" id="mTh-Av-NPV"/>
+                        <outlet property="readyToGrillBlurTrailingConstraint" destination="hqy-6b-3RS" id="bun-2c-F44"/>
                         <outlet property="tableView" destination="gZw-JK-BNM" id="P5x-eE-0H4"/>
+                        <outlet property="tableViewLeadingConstraint" destination="W5A-Xc-tS5" id="ReR-e9-b8u"/>
+                        <outlet property="tableViewTrailingConstraint" destination="QWI-IO-sqV" id="QC1-1E-v5f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
