@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -27,6 +28,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var backgroundLeadingContraint: NSLayoutConstraint!
     
     let cellHeight = CGFloat(60)
+    var motionManager: CMMotionManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +45,23 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         self.readyToGrillBlurLeadingConstraint.constant = 0
         self.readyToGrillBlurTrailingConstraint.constant = 0
+        
+        self.motionManager = CMMotionManager()
+        self.motionManager!.accelerometerUpdateInterval = 0.2
+        self.motionManager!.gyroUpdateInterval = 0.2
+        
+        self.motionManager?.startAccelerometerUpdatesToQueue(NSOperationQueue()) {
+            (data, error) in
+            
+            var x = CGFloat(data.acceleration.x)
+            var y = data.acceleration.y
+            
+            println("x: \(x), y: \(y)")
+        }
+        
     }
     
-    override func viewDidAppear(animated: Bool) {
-    }
+
     
     func addPlusBarButtonItem() {
         var image = UIImage(named: "plus")

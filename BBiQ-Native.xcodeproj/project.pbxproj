@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00243BCB1A32C713006C0A49 /* MYRIADPRO-REGULAR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00243BCA1A32C6ED006C0A49 /* MYRIADPRO-REGULAR.ttf */; };
+		0026FFA91A350F6200E45ADF /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026FFA81A350F6200E45ADF /* CoreMotion.framework */; };
 		00C05CBB1A32DD98002C490D /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00C05CBA1A32DD4C002C490D /* fontawesome-webfont.ttf */; };
 		00C05CBD1A32EE33002C490D /* JFCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C05CBC1A32EE33002C490D /* JFCViewController.swift */; };
 		00EEB00B1A32B2AD003AC541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EEB00A1A32B2AD003AC541 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		00243BCA1A32C6ED006C0A49 /* MYRIADPRO-REGULAR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MYRIADPRO-REGULAR.ttf"; sourceTree = "<group>"; };
+		0026FFA81A350F6200E45ADF /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		00C05CBA1A32DD4C002C490D /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		00C05CBC1A32EE33002C490D /* JFCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCViewController.swift; sourceTree = "<group>"; };
 		00EEB0051A32B2AD003AC541 /* BBiQ-Native.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBiQ-Native.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0026FFA91A350F6200E45ADF /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +72,7 @@
 		00EEAFFC1A32B2AD003AC541 = {
 			isa = PBXGroup;
 			children = (
+				0026FFA81A350F6200E45ADF /* CoreMotion.framework */,
 				00EEB0071A32B2AD003AC541 /* BBiQ-Native */,
 				00EEB01D1A32B2AE003AC541 /* BBiQ-NativeTests */,
 				00EEB0061A32B2AD003AC541 /* Products */,
