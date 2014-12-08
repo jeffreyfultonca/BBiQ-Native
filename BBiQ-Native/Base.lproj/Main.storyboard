@@ -25,13 +25,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="TNP-xe-Wad">
-                                <rect key="frame" x="0.0" y="0.0" width="1067" height="600"/>
+                                <rect key="frame" x="-20" y="0.0" width="1067" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TNP-xe-Wad" secondAttribute="height" multiplier="16:9" id="MXp-oQ-edE"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-blur" translatesAutoresizingMaskIntoConstraints="NO" id="zjE-fw-jaM" userLabel="background-blur">
-                                <rect key="frame" x="0.0" y="0.0" width="1067" height="600"/>
+                                <rect key="frame" x="-20" y="0.0" width="1067" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zjE-fw-jaM" secondAttribute="height" multiplier="16:9" id="akg-Wu-dMu"/>
                                 </constraints>
@@ -139,7 +139,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="gZw-JK-BNM" secondAttribute="trailing" id="QWI-IO-sqV"/>
                             <constraint firstItem="gZw-JK-BNM" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="W5A-Xc-tS5"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="gZw-JK-BNM" secondAttribute="bottom" id="WIM-cT-jPy"/>
-                            <constraint firstItem="TNP-xe-Wad" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="WbR-IL-cX8"/>
+                            <constraint firstItem="TNP-xe-Wad" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="-20" id="WbR-IL-cX8"/>
                             <constraint firstItem="DSh-ul-RwF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="eTG-15-NPa"/>
                             <constraint firstItem="TNP-xe-Wad" firstAttribute="height" secondItem="zjE-fw-jaM" secondAttribute="height" id="ecC-Vt-Vc5"/>
                             <constraint firstAttribute="trailing" secondItem="DSh-ul-RwF" secondAttribute="trailing" id="hqy-6b-3RS"/>

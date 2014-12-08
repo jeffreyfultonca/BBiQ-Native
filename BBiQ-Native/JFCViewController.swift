@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreMotion
 
 class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -28,7 +27,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var backgroundLeadingContraint: NSLayoutConstraint!
     
     let cellHeight = CGFloat(60)
-    var motionManager: CMMotionManager?
+    let backgroundMotionRelativeValue = 25
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,22 +42,30 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.tableViewLeadingConstraint.constant = self.view.frame.size.width
         self.tableViewTrailingConstraint.constant = -self.view.frame.size.width
         
+        self.backgroundLeadingContraint.constant = CGFloat(-backgroundMotionRelativeValue)
+        
         self.readyToGrillBlurLeadingConstraint.constant = 0
         self.readyToGrillBlurTrailingConstraint.constant = 0
-        
-        self.motionManager = CMMotionManager()
-        self.motionManager!.accelerometerUpdateInterval = 0.2
-        self.motionManager!.gyroUpdateInterval = 0.2
-        
-        self.motionManager?.startAccelerometerUpdatesToQueue(NSOperationQueue()) {
-            (data, error) in
             
-            var x = CGFloat(data.acceleration.x)
-            var y = data.acceleration.y
-            
-            println("x: \(x), y: \(y)")
-        }
+        var verticalMotionEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(
+            keyPath: "center.y",
+            type: UIInterpolatingMotionEffectType.TiltAlongVerticalAxis
+        )
+        verticalMotionEffect.minimumRelativeValue = backgroundMotionRelativeValue
+        verticalMotionEffect.maximumRelativeValue = -backgroundMotionRelativeValue
         
+        var horizontalMotionEffect = UIInterpolatingMotionEffect(
+            keyPath: "center.x",
+            type: UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis
+        )
+        horizontalMotionEffect.minimumRelativeValue = backgroundMotionRelativeValue
+        horizontalMotionEffect.maximumRelativeValue = -backgroundMotionRelativeValue
+        
+        var group = UIMotionEffectGroup()
+        group.motionEffects = [verticalMotionEffect, horizontalMotionEffect]
+        
+        backgroundView.addMotionEffect(group)
+        backgroundBlurView.addMotionEffect(group)
     }
     
 
@@ -93,7 +100,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
                     self.tableViewLeadingConstraint.constant = self.view.frame.size.width
                     self.tableViewTrailingConstraint.constant = -self.view.frame.size.width
                     
-                    self.backgroundLeadingContraint.constant = 0
+                    self.backgroundLeadingContraint.constant = CGFloat(-self.backgroundMotionRelativeValue)
                     
                     self.readyToGrillBlurLeadingConstraint.constant = 0
                     self.readyToGrillBlurTrailingConstraint.constant = 0
@@ -108,7 +115,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
                     self.tableViewLeadingConstraint.constant = 0
                     self.tableViewTrailingConstraint.constant = 0
                     
-                    self.backgroundLeadingContraint.constant = -100
+                    self.backgroundLeadingContraint.constant = CGFloat(-100 - self.backgroundMotionRelativeValue)
                     
                     self.readyToGrillBlurLeadingConstraint.constant = -self.view.frame.size.width
                     self.readyToGrillBlurTrailingConstraint.constant = self.view.frame.size.width

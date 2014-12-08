@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		00243BCB1A32C713006C0A49 /* MYRIADPRO-REGULAR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00243BCA1A32C6ED006C0A49 /* MYRIADPRO-REGULAR.ttf */; };
-		0026FFA91A350F6200E45ADF /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026FFA81A350F6200E45ADF /* CoreMotion.framework */; };
 		00C05CBB1A32DD98002C490D /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00C05CBA1A32DD4C002C490D /* fontawesome-webfont.ttf */; };
 		00C05CBD1A32EE33002C490D /* JFCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C05CBC1A32EE33002C490D /* JFCViewController.swift */; };
 		00EEB00B1A32B2AD003AC541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EEB00A1A32B2AD003AC541 /* AppDelegate.swift */; };
@@ -55,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0026FFA91A350F6200E45ADF /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
