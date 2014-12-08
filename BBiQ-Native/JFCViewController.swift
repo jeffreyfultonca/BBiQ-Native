@@ -68,8 +68,6 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         backgroundBlurView.addMotionEffect(group)
     }
     
-
-    
     func addPlusBarButtonItem() {
         var image = UIImage(named: "plus")
         image = image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
@@ -86,7 +84,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.navigationItem.rightBarButtonItem = barItem
     }
     
-    func toggleAnimation() {
+    @IBAction func toggleAnimation() {
     
         UIView.animateWithDuration(
             0.5,

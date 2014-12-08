@@ -69,10 +69,14 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="jyn-D6-Sa8" secondAttribute="trailing" id="ztA-Eb-47y"/>
                                     </constraints>
                                 </view>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="aZV-Z4-kkF"/>
                                 </constraints>
                                 <blurEffect style="dark"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="HA1-2Y-hUs" appends="YES" id="uvh-uW-5Pc"/>
+                                </connections>
                             </visualEffectView>
                             <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gZw-JK-BNM">
                                 <rect key="frame" x="16" y="0.0" width="568" height="600"/>
@@ -168,6 +172,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HA1-2Y-hUs">
+                    <connections>
+                        <action selector="toggleAnimation" destination="vXZ-lx-hvc" id="3RV-ns-sWd"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="76h-Xb-AVd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="546" y="533"/>
         </scene>
