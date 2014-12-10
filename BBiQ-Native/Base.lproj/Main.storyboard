@@ -153,11 +153,7 @@
                             <constraint firstAttribute="trailing" secondItem="Hic-SA-83h" secondAttribute="trailing" id="zT0-cS-eeT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="BBiQ" id="5nS-uZ-vhm">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="DoI-P8-DZg">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="BBiQ" id="5nS-uZ-vhm"/>
                     <connections>
                         <outlet property="backgroundBlurView" destination="zjE-fw-jaM" id="ybh-m2-ZLg"/>
                         <outlet property="backgroundLeadingContraint" destination="WbR-IL-cX8" id="Ymf-sZ-N1h"/>
@@ -207,6 +203,5 @@
     <resources>
         <image name="background" width="853" height="640"/>
         <image name="background-blur" width="853" height="640"/>
-        <image name="menu" width="33" height="33"/>
     </resources>
 </document>

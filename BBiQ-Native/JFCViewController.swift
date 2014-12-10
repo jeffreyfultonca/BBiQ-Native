@@ -13,7 +13,8 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var backgroundView: UIImageView!
     @IBOutlet weak var backgroundBlurView: UIImageView!
-    var plusButtonImageView: UIImageView!;
+    var plusButtonImageView: UIImageView!
+    var menuButtonImageView: UIImageView!
     var animationIsToggled = false
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navBarBlurEffectView: UIVisualEffectView!
@@ -29,11 +30,14 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let cellHeight = CGFloat(60)
     let backgroundMotionRelativeValue = 25
     
+    var menuButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         addPlusBarButtonItem()
+        addMenuBarButtonItem()
         
         tableView.tableHeaderView = UIView(frame: CGRectMake(0, 0, tableView.bounds.size.width, cellHeight + 80))
         tableView.contentInset = UIEdgeInsetsMake(-cellHeight, 0, 0, 0)
@@ -79,9 +83,22 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         plusButton.frame = CGRectMake(0, 0, 40, 40)
         plusButton.addSubview(plusButtonImageView)
         plusButton.addTarget(self, action: "toggleAnimation", forControlEvents: UIControlEvents.TouchUpInside)
-        plusButtonImageView.center = plusButton.center
         var barItem = UIBarButtonItem(customView: plusButton)
         self.navigationItem.rightBarButtonItem = barItem
+    }
+    
+    func addMenuBarButtonItem() {
+        var image = UIImage(named: "menu")
+        image = image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        menuButtonImageView = UIImageView(image: image)
+        menuButtonImageView.autoresizingMask = UIViewAutoresizing.None
+        menuButtonImageView.contentMode = UIViewContentMode.Center
+        
+        menuButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        menuButton.frame = CGRectMake(0, 0, 40, 40)
+        menuButton.addSubview(menuButtonImageView)
+        var barItem = UIBarButtonItem(customView: menuButton)
+        self.navigationItem.leftBarButtonItem = barItem
     }
     
     @IBAction func toggleAnimation() {
@@ -245,36 +262,71 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
-        var cell = tableView.cellForRowAtIndexPath(indexPath) as UITableViewCell!;
-        var originalBackgroundColor = cell.backgroundColor
+        var originalCell = tableView.cellForRowAtIndexPath(indexPath) as UITableViewCell!
+        var originalBackgroundColor = originalCell.backgroundColor
+        
+        var duplicateCell = NSKeyedUnarchiver.unarchiveObjectWithData(NSKeyedArchiver.archivedDataWithRootObject(originalCell)) as UITableViewCell
+        
+        let pointRelativeToWindow = originalCell.convertPoint(self.view.frame.origin, toView: nil)
+        duplicateCell.frame.origin = pointRelativeToWindow
+        self.view.addSubview(duplicateCell)
+        
+        let originalAlpha = originalCell.alpha
+        originalCell.alpha = 0
         
         UIView.animateWithDuration(
-            0.5,
+            0.3,
             delay: 0,
             usingSpringWithDamping: 0.5,
-            initialSpringVelocity: 30,
+            initialSpringVelocity: 35,
             options: nil,
             animations: {
-                cell.frame.origin.x -= 10
-                cell.frame.size.width += 20
-                cell.backgroundColor = UIColor.whiteColor()
+                duplicateCell.frame.origin.x -= 10
+                duplicateCell.frame.size.width += 20
+                duplicateCell.backgroundColor = UIColor.whiteColor()
             }, completion: {
                 (value: Bool) in
-                self.toggleAnimation()
                 
-                dispatch_after(
-                    dispatch_time(
-                        DISPATCH_TIME_NOW,
-                        Int64(0.5 * Double(NSEC_PER_SEC))
-                    ),
-                    dispatch_get_main_queue()
-                ){
-                    println("test")
-                    cell.frame.origin.x += 10
-                    cell.frame.size.width -= 20
-                    cell.backgroundColor = originalBackgroundColor
-
-                }
+                UIView.animateWithDuration(
+                    0.35,
+                    delay: 0,
+                    options: UIViewAnimationOptions.CurveEaseIn,
+                    animations: {
+                        // Replace with dynamic coords
+                        duplicateCell.center.x = 33
+                    }, completion: nil
+                )
+                UIView.animateWithDuration(
+                    0.4,
+                    delay: 0.02,
+                    options: UIViewAnimationOptions.CurveEaseIn,
+                    animations: {
+                        // Replace with dynamic coords
+                        duplicateCell.center.y = 40
+                        
+                        duplicateCell.transform = CGAffineTransformMakeScale(0.1, 0.1)
+                        duplicateCell.alpha = 0.5
+                        
+                        originalCell.alpha = originalAlpha
+                    }, completion: {
+                        (value: Bool) in
+                        
+                        duplicateCell.removeFromSuperview()
+                        
+                        self.menuButtonImageView.transform = CGAffineTransformMakeScale(0.9, 0.9)
+                        
+                        UIView.animateWithDuration(
+                            1.0,
+                            delay: 0,
+                            usingSpringWithDamping: 0.3,
+                            initialSpringVelocity: 200,
+                            options: nil,
+                            animations: {
+                                self.menuButtonImageView.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                            }, completion: nil
+                        )
+                    }
+                )
             }
         )
     }
