@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A1754CE5-47BD-4FB6-B3D0-DC3C1605D889</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BBiQ-Native</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EC2C3706AC82BCC9B93DE921BE3CDFBA0E3C3D5F</key>
+		<string>github.com:jeffreyfultonca/BBiQ-Native.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BBiQ-Native.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EC2C3706AC82BCC9B93DE921BE3CDFBA0E3C3D5F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:jeffreyfultonca/BBiQ-Native.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EC2C3706AC82BCC9B93DE921BE3CDFBA0E3C3D5F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EC2C3706AC82BCC9B93DE921BE3CDFBA0E3C3D5F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BBiQ-Native</string>
+		</dict>
+	</array>
+</dict>
+</plist>

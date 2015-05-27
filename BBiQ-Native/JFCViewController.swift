@@ -79,7 +79,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         plusButtonImageView.autoresizingMask = UIViewAutoresizing.None
         plusButtonImageView.contentMode = UIViewContentMode.Center
         
-        var plusButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        var plusButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         plusButton.frame = CGRectMake(0, 0, 40, 40)
         plusButton.addSubview(plusButtonImageView)
         plusButton.addTarget(self, action: "toggleAnimation", forControlEvents: UIControlEvents.TouchUpInside)
@@ -94,7 +94,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         menuButtonImageView.autoresizingMask = UIViewAutoresizing.None
         menuButtonImageView.contentMode = UIViewContentMode.Center
         
-        menuButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        menuButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
         menuButton.frame = CGRectMake(0, 0, 40, 40)
         menuButton.addSubview(menuButtonImageView)
         var barItem = UIBarButtonItem(customView: menuButton)
@@ -159,7 +159,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        var header = view as UITableViewHeaderFooterView
+        var header = view as! UITableViewHeaderFooterView
         header.textLabel.textColor = UIColor.whiteColor()
         header.contentView.backgroundColor = sections[section].color
     }
@@ -243,13 +243,13 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
         
         // Configure the cell...
-        var nameLabel = cell.viewWithTag(100) as UILabel
+        var nameLabel = cell.viewWithTag(100) as! UILabel
         nameLabel.text = sections[indexPath.section].items[indexPath.row].name
         
-        var minutesLabel = cell.viewWithTag(101) as UILabel
+        var minutesLabel = cell.viewWithTag(101) as! UILabel
         minutesLabel.text = "\(sections[indexPath.section].items[indexPath.row].minutes) m"
         
         
@@ -265,7 +265,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         var originalCell = tableView.cellForRowAtIndexPath(indexPath) as UITableViewCell!
         var originalBackgroundColor = originalCell.backgroundColor
         
-        var duplicateCell = NSKeyedUnarchiver.unarchiveObjectWithData(NSKeyedArchiver.archivedDataWithRootObject(originalCell)) as UITableViewCell
+        var duplicateCell = NSKeyedUnarchiver.unarchiveObjectWithData(NSKeyedArchiver.archivedDataWithRootObject(originalCell)) as! UITableViewCell
         
         let pointRelativeToWindow = originalCell.convertPoint(self.view.frame.origin, toView: nil)
         duplicateCell.frame.origin = pointRelativeToWindow
