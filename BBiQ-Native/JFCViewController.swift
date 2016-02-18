@@ -51,21 +51,21 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.readyToGrillBlurLeadingConstraint.constant = 0
         self.readyToGrillBlurTrailingConstraint.constant = 0
             
-        var verticalMotionEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(
+        let verticalMotionEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(
             keyPath: "center.y",
             type: UIInterpolatingMotionEffectType.TiltAlongVerticalAxis
         )
         verticalMotionEffect.minimumRelativeValue = backgroundMotionRelativeValue
         verticalMotionEffect.maximumRelativeValue = -backgroundMotionRelativeValue
         
-        var horizontalMotionEffect = UIInterpolatingMotionEffect(
+        let horizontalMotionEffect = UIInterpolatingMotionEffect(
             keyPath: "center.x",
             type: UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis
         )
         horizontalMotionEffect.minimumRelativeValue = backgroundMotionRelativeValue
         horizontalMotionEffect.maximumRelativeValue = -backgroundMotionRelativeValue
         
-        var group = UIMotionEffectGroup()
+        let group = UIMotionEffectGroup()
         group.motionEffects = [verticalMotionEffect, horizontalMotionEffect]
         
         backgroundView.addMotionEffect(group)
@@ -79,11 +79,11 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         plusButtonImageView.autoresizingMask = UIViewAutoresizing.None
         plusButtonImageView.contentMode = UIViewContentMode.Center
         
-        var plusButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let plusButton = UIButton(type: UIButtonType.Custom)
         plusButton.frame = CGRectMake(0, 0, 40, 40)
         plusButton.addSubview(plusButtonImageView)
         plusButton.addTarget(self, action: "toggleAnimation", forControlEvents: UIControlEvents.TouchUpInside)
-        var barItem = UIBarButtonItem(customView: plusButton)
+        let barItem = UIBarButtonItem(customView: plusButton)
         self.navigationItem.rightBarButtonItem = barItem
     }
     
@@ -94,10 +94,10 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         menuButtonImageView.autoresizingMask = UIViewAutoresizing.None
         menuButtonImageView.contentMode = UIViewContentMode.Center
         
-        menuButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        menuButton = UIButton(type: UIButtonType.Custom)
         menuButton.frame = CGRectMake(0, 0, 40, 40)
         menuButton.addSubview(menuButtonImageView)
-        var barItem = UIBarButtonItem(customView: menuButton)
+        let barItem = UIBarButtonItem(customView: menuButton)
         self.navigationItem.leftBarButtonItem = barItem
     }
     
@@ -108,7 +108,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
             delay: 0,
             usingSpringWithDamping: 1.0,
             initialSpringVelocity: 0,
-            options: nil,
+            options: [],
             animations: {
                 if self.animationIsToggled {
                     
@@ -159,8 +159,8 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        var header = view as! UITableViewHeaderFooterView
-        header.textLabel.textColor = UIColor.whiteColor()
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.whiteColor()
         header.contentView.backgroundColor = sections[section].color
     }
     
@@ -243,13 +243,13 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) 
         
         // Configure the cell...
-        var nameLabel = cell.viewWithTag(100) as! UILabel
+        let nameLabel = cell.viewWithTag(100) as! UILabel
         nameLabel.text = sections[indexPath.section].items[indexPath.row].name
         
-        var minutesLabel = cell.viewWithTag(101) as! UILabel
+        let minutesLabel = cell.viewWithTag(101) as! UILabel
         minutesLabel.text = "\(sections[indexPath.section].items[indexPath.row].minutes) m"
         
         
@@ -262,10 +262,9 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
-        var originalCell = tableView.cellForRowAtIndexPath(indexPath) as UITableViewCell!
-        var originalBackgroundColor = originalCell.backgroundColor
+        let originalCell = tableView.cellForRowAtIndexPath(indexPath) as UITableViewCell!
         
-        var duplicateCell = NSKeyedUnarchiver.unarchiveObjectWithData(NSKeyedArchiver.archivedDataWithRootObject(originalCell)) as! UITableViewCell
+        let duplicateCell = NSKeyedUnarchiver.unarchiveObjectWithData(NSKeyedArchiver.archivedDataWithRootObject(originalCell)) as! UITableViewCell
         
         let pointRelativeToWindow = originalCell.convertPoint(self.view.frame.origin, toView: nil)
         duplicateCell.frame.origin = pointRelativeToWindow
@@ -279,7 +278,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
             delay: 0,
             usingSpringWithDamping: 0.5,
             initialSpringVelocity: 35,
-            options: nil,
+            options: [],
             animations: {
                 duplicateCell.frame.origin.x -= 10
                 duplicateCell.frame.size.width += 20
@@ -320,7 +319,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
                             delay: 0,
                             usingSpringWithDamping: 0.3,
                             initialSpringVelocity: 200,
-                            options: nil,
+                            options: [],
                             animations: {
                                 self.menuButtonImageView.transform = CGAffineTransformMakeScale(1.0, 1.0)
                             }, completion: nil

@@ -13,8 +13,8 @@ class JFCTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var backgroundImage = UIImage(named: "background")
-        var backgroundImageView = UIImageView(image: backgroundImage);
+        let backgroundImage = UIImage(named: "background")
+        let backgroundImageView = UIImageView(image: backgroundImage);
         backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
         backgroundImageView.frame = self.tableView.frame
         self.tableView.backgroundView = backgroundImageView

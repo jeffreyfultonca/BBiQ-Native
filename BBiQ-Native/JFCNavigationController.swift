@@ -17,10 +17,10 @@ class JFCNavigationController: UINavigationController {
         self.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
 
         // Draw bottom border
-        var border = CALayer()
+        let border = CALayer()
         border.borderColor = UIColor.whiteColor().CGColor
         border.borderWidth = 1;
-        var layer = self.navigationBar.layer
+        let layer = self.navigationBar.layer
         border.frame = CGRectMake(
             0,
             layer.bounds.size.height,
@@ -38,7 +38,7 @@ class JFCNavigationController: UINavigationController {
 //            }
 //        }
         
-        var attributes = [
+        let attributes = [
             NSFontAttributeName: UIFont(name: "MyriadPro-Regular", size: 24)!,
             NSForegroundColorAttributeName: UIColor.whiteColor()
         ]
