@@ -11,53 +11,27 @@
 		00C05CBB1A32DD98002C490D /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00C05CBA1A32DD4C002C490D /* fontawesome-webfont.ttf */; };
 		00C05CBD1A32EE33002C490D /* JFCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C05CBC1A32EE33002C490D /* JFCViewController.swift */; };
 		00EEB00B1A32B2AD003AC541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EEB00A1A32B2AD003AC541 /* AppDelegate.swift */; };
-		00EEB00D1A32B2AD003AC541 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EEB00C1A32B2AD003AC541 /* ViewController.swift */; };
 		00EEB0101A32B2AD003AC541 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00EEB00E1A32B2AD003AC541 /* Main.storyboard */; };
 		00EEB0121A32B2AD003AC541 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00EEB0111A32B2AD003AC541 /* Images.xcassets */; };
 		00EEB0151A32B2AD003AC541 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EEB0131A32B2AD003AC541 /* LaunchScreen.xib */; };
-		00EEB0211A32B2AE003AC541 /* BBiQ_NativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EEB0201A32B2AE003AC541 /* BBiQ_NativeTests.swift */; };
-		00EEB02D1A32BF2C003AC541 /* JFCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EEB02C1A32BF2C003AC541 /* JFCTableViewController.swift */; };
 		00EEB0311A32C147003AC541 /* JFCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EEB0301A32C147003AC541 /* JFCNavigationController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		00EEB01B1A32B2AE003AC541 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 00EEAFFD1A32B2AD003AC541 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 00EEB0041A32B2AD003AC541;
-			remoteInfo = "BBiQ-Native";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		00243BCA1A32C6ED006C0A49 /* MYRIADPRO-REGULAR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MYRIADPRO-REGULAR.ttf"; sourceTree = "<group>"; };
-		0026FFA81A350F6200E45ADF /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		00C05CBA1A32DD4C002C490D /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		00C05CBC1A32EE33002C490D /* JFCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCViewController.swift; sourceTree = "<group>"; };
 		00EEB0051A32B2AD003AC541 /* BBiQ-Native.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBiQ-Native.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00EEB0091A32B2AD003AC541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00EEB00A1A32B2AD003AC541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		00EEB00C1A32B2AD003AC541 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		00EEB00F1A32B2AD003AC541 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00EEB0111A32B2AD003AC541 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		00EEB0141A32B2AD003AC541 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		00EEB01A1A32B2AE003AC541 /* BBiQ-NativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BBiQ-NativeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		00EEB01F1A32B2AE003AC541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00EEB0201A32B2AE003AC541 /* BBiQ_NativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBiQ_NativeTests.swift; sourceTree = "<group>"; };
-		00EEB02C1A32BF2C003AC541 /* JFCTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JFCTableViewController.swift; path = ../JFCTableViewController.swift; sourceTree = "<group>"; };
 		00EEB0301A32C147003AC541 /* JFCNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		00EEB0021A32B2AD003AC541 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		00EEB0171A32B2AE003AC541 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -70,9 +44,7 @@
 		00EEAFFC1A32B2AD003AC541 = {
 			isa = PBXGroup;
 			children = (
-				0026FFA81A350F6200E45ADF /* CoreMotion.framework */,
 				00EEB0071A32B2AD003AC541 /* BBiQ-Native */,
-				00EEB01D1A32B2AE003AC541 /* BBiQ-NativeTests */,
 				00EEB0061A32B2AD003AC541 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				00EEB0051A32B2AD003AC541 /* BBiQ-Native.app */,
-				00EEB01A1A32B2AE003AC541 /* BBiQ-NativeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,13 +61,11 @@
 			isa = PBXGroup;
 			children = (
 				00EEB00A1A32B2AD003AC541 /* AppDelegate.swift */,
-				00EEB00C1A32B2AD003AC541 /* ViewController.swift */,
 				00EEB00E1A32B2AD003AC541 /* Main.storyboard */,
 				00C05CBC1A32EE33002C490D /* JFCViewController.swift */,
 				00EEB0301A32C147003AC541 /* JFCNavigationController.swift */,
 				00EEB0111A32B2AD003AC541 /* Images.xcassets */,
 				00EEB0131A32B2AD003AC541 /* LaunchScreen.xib */,
-				00EEB02C1A32BF2C003AC541 /* JFCTableViewController.swift */,
 				00EEB0081A32B2AD003AC541 /* Supporting Files */,
 			);
 			path = "BBiQ-Native";
@@ -108,23 +77,6 @@
 				00243BCA1A32C6ED006C0A49 /* MYRIADPRO-REGULAR.ttf */,
 				00C05CBA1A32DD4C002C490D /* fontawesome-webfont.ttf */,
 				00EEB0091A32B2AD003AC541 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		00EEB01D1A32B2AE003AC541 /* BBiQ-NativeTests */ = {
-			isa = PBXGroup;
-			children = (
-				00EEB0201A32B2AE003AC541 /* BBiQ_NativeTests.swift */,
-				00EEB01E1A32B2AE003AC541 /* Supporting Files */,
-			);
-			path = "BBiQ-NativeTests";
-			sourceTree = "<group>";
-		};
-		00EEB01E1A32B2AE003AC541 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				00EEB01F1A32B2AE003AC541 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -149,24 +101,6 @@
 			productReference = 00EEB0051A32B2AD003AC541 /* BBiQ-Native.app */;
 			productType = "com.apple.product-type.application";
 		};
-		00EEB0191A32B2AE003AC541 /* BBiQ-NativeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 00EEB0271A32B2AE003AC541 /* Build configuration list for PBXNativeTarget "BBiQ-NativeTests" */;
-			buildPhases = (
-				00EEB0161A32B2AE003AC541 /* Sources */,
-				00EEB0171A32B2AE003AC541 /* Frameworks */,
-				00EEB0181A32B2AE003AC541 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				00EEB01C1A32B2AE003AC541 /* PBXTargetDependency */,
-			);
-			name = "BBiQ-NativeTests";
-			productName = "BBiQ-NativeTests";
-			productReference = 00EEB01A1A32B2AE003AC541 /* BBiQ-NativeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -175,15 +109,13 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Jeffrey Fulton";
 				TargetAttributes = {
 					00EEB0041A32B2AD003AC541 = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					00EEB0191A32B2AE003AC541 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 00EEB0041A32B2AD003AC541;
+						DevelopmentTeam = 4DN5KQR8W8;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -201,7 +133,6 @@
 			projectRoot = "";
 			targets = (
 				00EEB0041A32B2AD003AC541 /* BBiQ-Native */,
-				00EEB0191A32B2AE003AC541 /* BBiQ-NativeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -219,13 +150,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		00EEB0181A32B2AE003AC541 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -233,31 +157,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00EEB00D1A32B2AD003AC541 /* ViewController.swift in Sources */,
 				00EEB00B1A32B2AD003AC541 /* AppDelegate.swift in Sources */,
 				00C05CBD1A32EE33002C490D /* JFCViewController.swift in Sources */,
 				00EEB0311A32C147003AC541 /* JFCNavigationController.swift in Sources */,
-				00EEB02D1A32BF2C003AC541 /* JFCTableViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		00EEB0161A32B2AE003AC541 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				00EEB0211A32B2AE003AC541 /* BBiQ_NativeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		00EEB01C1A32B2AE003AC541 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 00EEB0041A32B2AD003AC541 /* BBiQ-Native */;
-			targetProxy = 00EEB01B1A32B2AE003AC541 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		00EEB00E1A32B2AD003AC541 /* Main.storyboard */ = {
@@ -292,8 +198,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -302,6 +210,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -314,7 +223,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -335,8 +244,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -344,15 +255,17 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -361,10 +274,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4DN5KQR8W8;
 				INFOPLIST_FILE = "BBiQ-Native/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ca.jeffreyfulton.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -372,46 +287,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4DN5KQR8W8;
 				INFOPLIST_FILE = "BBiQ-Native/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ca.jeffreyfulton.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		00EEB0281A32B2AE003AC541 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "BBiQ-NativeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ca.jeffreyfulton.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BBiQ-Native.app/BBiQ-Native";
-			};
-			name = Debug;
-		};
-		00EEB0291A32B2AE003AC541 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "BBiQ-NativeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ca.jeffreyfulton.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BBiQ-Native.app/BBiQ-Native";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -432,15 +313,6 @@
 			buildConfigurations = (
 				00EEB0251A32B2AE003AC541 /* Debug */,
 				00EEB0261A32B2AE003AC541 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		00EEB0271A32B2AE003AC541 /* Build configuration list for PBXNativeTarget "BBiQ-NativeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				00EEB0281A32B2AE003AC541 /* Debug */,
-				00EEB0291A32B2AE003AC541 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
