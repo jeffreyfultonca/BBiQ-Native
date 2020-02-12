@@ -39,7 +39,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
         addMenuBarButtonItem()
         
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: cellHeight + 80))
-        tableView.contentInset = UIEdgeInsetsMake(-cellHeight, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsets(top: -cellHeight, left: 0, bottom: 0, right: 0)
         
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: cellHeight))
         self.tableViewLeadingConstraint.constant = self.view.frame.size.width
@@ -52,14 +52,14 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
             
         let verticalMotionEffect: UIInterpolatingMotionEffect = UIInterpolatingMotionEffect(
             keyPath: "center.y",
-            type: UIInterpolatingMotionEffectType.tiltAlongVerticalAxis
+            type: UIInterpolatingMotionEffect.EffectType.tiltAlongVerticalAxis
         )
         verticalMotionEffect.minimumRelativeValue = backgroundMotionRelativeValue
         verticalMotionEffect.maximumRelativeValue = -backgroundMotionRelativeValue
         
         let horizontalMotionEffect = UIInterpolatingMotionEffect(
             keyPath: "center.x",
-            type: UIInterpolatingMotionEffectType.tiltAlongHorizontalAxis
+            type: UIInterpolatingMotionEffect.EffectType.tiltAlongHorizontalAxis
         )
         horizontalMotionEffect.minimumRelativeValue = backgroundMotionRelativeValue
         horizontalMotionEffect.maximumRelativeValue = -backgroundMotionRelativeValue
@@ -75,7 +75,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func addPlusBarButtonItem() {
         plusButtonImageView = UIImageView(image: #imageLiteral(resourceName: "plus"))
-        plusButtonImageView.autoresizingMask = UIViewAutoresizing()
+        plusButtonImageView.autoresizingMask = UIView.AutoresizingMask()
         plusButtonImageView.contentMode = .center
         
         let plusButton = UIButton(type: .custom)
@@ -89,7 +89,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func addMenuBarButtonItem() {
         menuButtonImageView = UIImageView(image: #imageLiteral(resourceName: "menu"))
-        menuButtonImageView.autoresizingMask = UIViewAutoresizing()
+        menuButtonImageView.autoresizingMask = UIView.AutoresizingMask()
         menuButtonImageView.contentMode = .center
         
         menuButton = UIButton(type: .custom)
@@ -280,7 +280,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 UIView.animate(
                     withDuration: 0.35,
                     delay: 0,
-                    options: UIViewAnimationOptions.curveEaseIn,
+                    options: UIView.AnimationOptions.curveEaseIn,
                     animations: {
                         // Replace with dynamic coords
                         duplicateCell.center.x = 33
@@ -289,7 +289,7 @@ class JFCViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 UIView.animate(
                     withDuration: 0.4,
                     delay: 0.02,
-                    options: UIViewAnimationOptions.curveEaseIn,
+                    options: UIView.AnimationOptions.curveEaseIn,
                     animations: {
                         // Replace with dynamic coords
                         duplicateCell.center.y = 40

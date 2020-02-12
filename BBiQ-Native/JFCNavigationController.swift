@@ -24,8 +24,8 @@ class JFCNavigationController: UINavigationController {
         layer.addSublayer(border)
         
         let attributes = [
-            NSFontAttributeName: UIFont(name: "MyriadPro-Regular", size: 24)!,
-            NSForegroundColorAttributeName: UIColor.white
+            NSAttributedString.Key.font: UIFont(name: "MyriadPro-Regular", size: 24)!,
+            NSAttributedString.Key.foregroundColor: UIColor.white
         ]
         
         self.navigationBar.titleTextAttributes = attributes
